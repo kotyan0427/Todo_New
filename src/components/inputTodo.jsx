@@ -1,17 +1,17 @@
 import React from "react";
 import style from "../App.module.css";
 
-export const InputTodo = ({ todoText, onChange, onClick, disabled }) => {
+export const InputTodo = ({ value, inputValue, add, disabled }) => {
   return (
     <div className={style.input_area}>
       <input
         placeholder="TODOを入力"
         type="text"
-        value={todoText}
-        onChange={onChange}
+        value={value}
+        onChange={inputValue}
         disabled={disabled}
       />
-      <button onClick={onClick}>追加</button>
+      <button onClick={add}>追加</button>
     </div>
   );
 };

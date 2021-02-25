@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import style from "./App.module.css";
 import {
-  InputArea,
-  IncompleteTodo,
-  CompleteTodo,
+  InputTodo,
+  IncompleteTodos,
+  CompleteTodos,
   FavoriteTodo,
-} from "./components/entry.js";
+} from "./components/entry";
 
 const App = () => {
   const [incompleteTodo, setIncompleteTodos] = useState([]);
@@ -64,7 +63,7 @@ const App = () => {
   };
   return (
     <>
-      <InputArea
+      <InputTodo
         value={value}
         inputValue={inputValue}
         add={onClickAdd}
@@ -73,12 +72,12 @@ const App = () => {
       {incompleteTodo.length >= 6 && (
         <p style={{ color: "red" }}>タスクを登録できません</p>
       )}
-      <IncompleteTodo
+      <IncompleteTodos
         incompleteTodo={incompleteTodo}
         clickCompleteTodo={clickCompleteTodo}
         deleteTodo={deleteTodo}
       />
-      <CompleteTodo
+      <CompleteTodos
         completeTodo={completeTodo}
         clickBack={clickBack}
         clickFavoriteTodo={clickFavoriteTodo}
